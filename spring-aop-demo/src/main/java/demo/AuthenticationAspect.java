@@ -22,7 +22,7 @@ public class AuthenticationAspect {
 
     @Before("authenticatingPointCut() || authorizationPointCut()")
     public void authenticate(JoinPoint jp) {
-        System.out.println(jp.getArgs()[0].toString());
+        //System.out.println(jp.getArgs()[0].toString());
         System.out.println("Authenticating the Request");
     }
 

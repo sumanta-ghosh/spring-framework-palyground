@@ -7,4 +7,8 @@ public class ShoppingCart {
     public void checkout(String status) {
         System.out.println("Checkout method from shopping cart called");
     }
+
+    public int quantity() {
+        return 100;
+    }
 }
