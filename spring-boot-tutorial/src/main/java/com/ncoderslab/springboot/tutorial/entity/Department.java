@@ -1,7 +1,5 @@
 package com.ncoderslab.springboot.tutorial.entity;
 
-import ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy;
-
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
