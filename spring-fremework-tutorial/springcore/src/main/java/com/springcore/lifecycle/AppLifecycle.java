@@ -8,13 +8,14 @@ public class AppLifecycle {
 	public static void main(String[] args) {
 		AbstractApplicationContext ctx = new ClassPathXmlApplicationContext("com/springcore/lifecycle/lifecycle-config.xml");
 		ctx.registerShutdownHook();
-		
+
 		Samosa samosa = (Samosa) ctx.getBean("samosa");
 		System.out.println(samosa.getPrice());
 
 		// ctx.close();
 
-		System.out.println("Call after close");
+		Pepsi pepsi = (Pepsi) ctx.getBean("pepsi");
+		System.out.println(pepsi);
 
 	}
 
