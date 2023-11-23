@@ -6,12 +6,18 @@
     http://www.springframework.org/schema/context
 	https://www.springframework.org/schema/context/spring-context.xsd">
 
+	<context:annotation-config />
+
 	<bean class="com.springcore.lifecycle.Pepsi" name="pepsi">
 		<property name="price" value="41.50" />
 	</bean>
 
 	<bean class="com.springcore.lifecycle.Samosa" name="samosa" init-method="init" destroy-method="destroy">
 		<property name="price" value="10" />
+	</bean>
+
+	<bean class="com.springcore.lifecycle.Piza" name="piza">
+		<property name="price" value="250.58" />
 	</bean>
 
 

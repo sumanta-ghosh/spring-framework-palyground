@@ -17,6 +17,9 @@ public class AppLifecycle {
 		Pepsi pepsi = (Pepsi) ctx.getBean("pepsi");
 		System.out.println(pepsi);
 
+		Piza piza = (Piza) ctx.getBean("piza");
+		System.out.println(piza);
+
 	}
 
 }
