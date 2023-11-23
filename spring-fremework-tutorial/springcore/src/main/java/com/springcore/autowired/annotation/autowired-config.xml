@@ -6,9 +6,15 @@
     http://www.springframework.org/schema/context
 	https://www.springframework.org/schema/context/spring-context.xsd">
 	<context:annotation-config />
-	<bean class="com.springcore.autowired.annotation.Address" name="address3">
+	
+	<bean class="com.springcore.autowired.annotation.Address" name="address">
 		<property name="street" value="G.T Road 200" />
 		<property name="city" value="Serampore" />
+	</bean>
+	
+	<bean class="com.springcore.autowired.annotation.Address" name="address2">
+		<property name="street" value="Delhi Road" />
+		<property name="city" value="Dankuni" />
 	</bean>
 
 	<bean class="com.springcore.autowired.annotation.Employee" name="employee" p:name="Sumanta" />
