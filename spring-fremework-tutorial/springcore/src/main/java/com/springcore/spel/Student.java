@@ -12,6 +12,12 @@ public class Student {
 	@Value("200")
 	private int y;
 
+	@Value("#{ T(java.lang.Math).sqrt(25) }")
+	private double z;
+
+	@Value("#{ new java.lang.String('Sumanta') }")
+	private String name;
+
 	public int getX() {
 		return x;
 	}
@@ -30,7 +36,15 @@ public class Student {
 
 	@Override
 	public String toString() {
-		return "Student [x=" + x + ", y=" + y + "]";
+		return "Student [x=" + x + ", y=" + y + ", z=" + z + ",name=" + name + "]";
+	}
+
+	public double getZ() {
+		return z;
+	}
+
+	public void setZ(double z) {
+		this.z = z;
 	}
 
 }
