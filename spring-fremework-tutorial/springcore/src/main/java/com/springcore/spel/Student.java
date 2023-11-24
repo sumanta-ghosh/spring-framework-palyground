@@ -18,6 +18,9 @@ public class Student {
 	@Value("#{ new java.lang.String('Sumanta') }")
 	private String name;
 
+	@Value("#{ 1 > 0 }")
+	private boolean isActive;
+
 	public int getX() {
 		return x;
 	}
@@ -36,7 +39,7 @@ public class Student {
 
 	@Override
 	public String toString() {
-		return "Student [x=" + x + ", y=" + y + ", z=" + z + ",name=" + name + "]";
+		return "Student [x=" + x + ", y=" + y + ", z=" + z + ", name=" + name + ", isActive=" + isActive + "]";
 	}
 
 	public double getZ() {
@@ -45,6 +48,14 @@ public class Student {
 
 	public void setZ(double z) {
 		this.z = z;
+	}
+
+	public boolean isActive() {
+		return isActive;
+	}
+
+	public void setActive(boolean isActive) {
+		this.isActive = isActive;
 	}
 
 }
