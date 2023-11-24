@@ -13,6 +13,7 @@ public class AppCollectionBean {
 		System.out.println(employee);
 		System.out.println(employee.getProps().getProperty("username"));
 		System.out.println(employee.getProps().getProperty("password"));
+		System.out.println(employee.getPhones().getClass().getName());
 
 		context.close();
 
