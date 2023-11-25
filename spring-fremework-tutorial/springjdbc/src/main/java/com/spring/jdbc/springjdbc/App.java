@@ -2,7 +2,9 @@ package com.spring.jdbc.springjdbc;
 
 import org.springframework.beans.BeansException;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
-import org.springframework.jdbc.core.JdbcTemplate;
+
+import com.spring.jdbc.springjdbc.dao.StudentDao;
+import com.spring.jdbc.springjdbc.entities.Student;
 
 /**
  * Hello world!
@@ -11,12 +13,14 @@ import org.springframework.jdbc.core.JdbcTemplate;
 public class App {
 	public static void main(String[] args) {
 		try (ClassPathXmlApplicationContext ctx = new ClassPathXmlApplicationContext("com/spring/jdbc/springjdbc/app-config.xml")) {
-			JdbcTemplate db = ctx.getBean("jdbctemplate", JdbcTemplate.class);
 
-			// insert query
-			String query = "INSERT INTO student(id,name,city) values(?,?,?)";
-			int rs = db.update(query, 2, "Saheb", "Kotulpur");
-			System.out.println("Number of reord inserted ... " + rs);
+			StudentDao studentDao = ctx.getBean("studentDaoImpl", StudentDao.class);
+
+			Student student = new Student(4, "John", "Kolkata");
+
+			int rs = studentDao.insert(student);
+
+			System.out.println("Number of reord inserted ... " + rs + " with id " + student.getId());
 
 		} catch (BeansException e) {
 			// TODO Auto-generated catch block
