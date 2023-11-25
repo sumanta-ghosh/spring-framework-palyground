@@ -16,11 +16,11 @@ public class App {
 
 			StudentDao studentDao = ctx.getBean("studentDaoImpl", StudentDao.class);
 
-			Student student = new Student(4, "John", "Kolkata");
+			Student student = new Student(4, "John", "London");
 
-			int rs = studentDao.insert(student);
+			int rs = studentDao.update(student);
 
-			System.out.println("Number of reord inserted ... " + rs + " with id " + student.getId());
+			System.out.println("Number of reord updated ... " + rs + " with id " + student.getId());
 
 		} catch (BeansException e) {
 			// TODO Auto-generated catch block
