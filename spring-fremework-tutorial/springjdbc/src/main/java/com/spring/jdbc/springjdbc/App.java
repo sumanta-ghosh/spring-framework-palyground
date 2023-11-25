@@ -1,6 +1,6 @@
 package com.spring.jdbc.springjdbc;
 
-import java.util.Optional;
+import java.util.List;
 
 import org.springframework.beans.BeansException;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
@@ -23,12 +23,14 @@ public class App {
 			// int rs = studentDaoImpl.update(student);
 			// int rs = studentDaoImpl.delete(2);
 
-			Optional<Student> rs = studentDaoImpl.getStudent(1);
-			System.out.println(rs.orElse(null));
-			/*
-			 * List<Student> rs = studentDaoImpl.getAllStudent(); for (Student std : rs) {
-			 * System.out.println(std); }
-			 */
+//			Optional<Student> rs = studentDaoImpl.getStudent(1);
+//			System.out.println(rs.orElse(null));
+
+			List<Student> rs = studentDaoImpl.getAllStudent();
+
+			for (Student std : rs) {
+				System.out.println(std);
+			}
 
 		} catch (BeansException e) {
 			// TODO Auto-generated catch block
