@@ -1,7 +1,9 @@
 package com.spring.jdbc.springjdbc.dao;
 
 import java.util.List;
+import java.util.Optional;
 
+import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
 
@@ -38,12 +40,17 @@ public class StudentDaoImpl implements StudentDao {
 	}
 
 	@Override
-	public Student getStudent(int id) {
+	public Optional<Student> getStudent(int id) {
 		String query = "SELECt * FROM student where id=?";
 
 		RowMapper<Student> rowMapper = new StudentRowMapperImpl();
 
-		return this.jdbctemplate.queryForObject(query, rowMapper, id);
+		try {
+			Student student = this.jdbctemplate.queryForObject(query, rowMapper, id);
+			return Optional.of(student);
+		} catch (EmptyResultDataAccessException e) {
+			return Optional.empty();
+		}
 	}
 
 	@Override
