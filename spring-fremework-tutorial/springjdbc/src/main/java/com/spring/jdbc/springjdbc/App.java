@@ -4,7 +4,6 @@ import org.springframework.beans.BeansException;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 import com.spring.jdbc.springjdbc.dao.StudentDao;
-import com.spring.jdbc.springjdbc.entities.Student;
 
 /**
  * Hello world!
@@ -16,11 +15,13 @@ public class App {
 
 			StudentDao studentDao = ctx.getBean("studentDaoImpl", StudentDao.class);
 
-			Student student = new Student(4, "John", "London");
+			// Student student = new Student(4, "John", "London");
 
-			int rs = studentDao.update(student);
+			// int rs = studentDao.insert(student);
+			// int rs = studentDao.update(student);
+			int rs = studentDao.delete(2);
 
-			System.out.println("Number of reord updated ... " + rs + " with id " + student.getId());
+			System.out.println("Number of reord updated ... " + rs);
 
 		} catch (BeansException e) {
 			// TODO Auto-generated catch block
