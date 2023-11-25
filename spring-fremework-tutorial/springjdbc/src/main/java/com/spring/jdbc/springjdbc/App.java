@@ -16,9 +16,9 @@ public class App {
 			StudentDao studentDao = ctx.getBean("studentDaoImpl", StudentDao.class);
 
 			// Student student = new Student(4, "John", "London");
-
 			// int rs = studentDao.insert(student);
 			// int rs = studentDao.update(student);
+
 			int rs = studentDao.delete(2);
 
 			System.out.println("Number of reord updated ... " + rs);
@@ -27,6 +27,5 @@ public class App {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		;
 	}
 }
