@@ -27,6 +27,11 @@ public class StudentDaoImpl implements StudentDao {
 	}
 
 	@Transactional
+	public void update(Student student) {
+		this.hibernateTemplate.update(student);
+	}
+
+	@Transactional
 	public void delete(int id) {
 		Student student = getStudent(id);
 		this.hibernateTemplate.delete(student);

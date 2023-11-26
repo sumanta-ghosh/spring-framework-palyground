@@ -22,8 +22,12 @@ public class App {
 		 * Student std = new Student(2, "Anupam", "Deshra"); studentDao.save(std);
 		 */
 
-		Student student = studentDao.getStudent(2);
+		Student student = studentDao.getStudent(1);
 		System.out.println(student);
+
+		student.setCity("Kotulpur");
+		student.setName("Anupam");
+		studentDao.update(student);
 
 		List<Student> allStudent = studentDao.getAll();
 
