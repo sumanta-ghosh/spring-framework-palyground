@@ -18,14 +18,6 @@ public class StudentDaoImpl implements StudentDao {
 		this.hibernateTemplate.save(student);
 	}
 
-	public Student getStudent(int id) {
-		return this.hibernateTemplate.get(Student.class, id);
-	}
-
-	public List<Student> getAll() {
-		return this.hibernateTemplate.loadAll(Student.class);
-	}
-
 	@Transactional
 	public void update(Student student) {
 		this.hibernateTemplate.update(student);
@@ -35,6 +27,14 @@ public class StudentDaoImpl implements StudentDao {
 	public void delete(int id) {
 		Student student = getStudent(id);
 		this.hibernateTemplate.delete(student);
+	}
+
+	public Student getStudent(int id) {
+		return this.hibernateTemplate.get(Student.class, id);
+	}
+
+	public List<Student> getAll() {
+		return this.hibernateTemplate.loadAll(Student.class);
 	}
 
 	public HibernateTemplate getHibernateTemplate() {
