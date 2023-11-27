@@ -1,26 +1,17 @@
 <%@page import="java.util.List"%>
+<%@ page isELIgnored="false"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <html>
 <body>
 	<a href="/springmvc/">Home</a>
 	<a href="/springmvc/about">About</a>
 	<a href="/springmvc/contact-us">Contact Us</a>
 	<div>
-		<%
-		String name = (String) request.getAttribute("pageName");
-		List<String> friends = (List<String>) request.getAttribute("friends");
-		%>
-		<h2>
-			This is
-			<%=name%>
-		</h2>
+		<h2>This is ${pageName}</h2>
 		<ul>
-			<%
-			for (String friendName : friends) {
-			%>
-			<li><%=friendName%></li>
-			<%
-			}
-			%>
+			<c:forEach var="name" items="${friends}">
+				<li>${name}</li>
+			</c:forEach>
 		</ul>
 	</div>
 </body>
