@@ -1,4 +1,3 @@
-<%@page import="java.util.List"%>
 <html>
 <body>
 	<a href="/springmvc/">Home</a>
@@ -7,21 +6,10 @@
 	<div>
 		<%
 		String name = (String) request.getAttribute("pageName");
-		List<String> friends = (List<String>) request.getAttribute("friends");
 		%>
 		<h2>
-			This is
-			<%=name%>
+			This is <%=name%>
 		</h2>
-		<ul>
-			<%
-			for (String friendName : friends) {
-			%>
-			<li><%=friendName%></li>
-			<%
-			}
-			%>
-		</ul>
 	</div>
 </body>
 </html>
