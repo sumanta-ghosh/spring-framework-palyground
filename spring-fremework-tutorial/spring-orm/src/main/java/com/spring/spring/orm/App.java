@@ -19,20 +19,20 @@ public class App {
 		StudentDaoImpl studentDao = ctx.getBean("studentDaoImpl2", StudentDaoImpl.class);
 
 		/*
-		 * Student std = new Student(2, "Anupam", "Deshra"); studentDao.save(std);
+		 * Student std = new Student(6, "Ranjan", "Deshra"); studentDao.save(std);
 		 */
 
 		Student student = studentDao.getStudent(1);
 		System.out.println(student);
 
-		student.setCity("Kotulpur");
 		student.setName("Anupam");
+		student.setCity("Kotulpur");
 		studentDao.update(student);
 
 		List<Student> allStudent = studentDao.getAll();
 
-		for (Student std : allStudent) {
-			System.out.println(std);
+		for (Student getAll : allStudent) {
+			System.out.println(getAll);
 		}
 
 		// delete student
