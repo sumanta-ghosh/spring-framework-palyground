@@ -6,6 +6,7 @@
 	<a href="/springmvc/">Home</a>
 	<a href="/springmvc/about">About</a>
 	<a href="/springmvc/contact-us">Contact Us</a>
+	<a href="/springmvc/signup">Sign up</a>
 	<div>
 		<h2>This is ${pageName}</h2>
 		<ul>
