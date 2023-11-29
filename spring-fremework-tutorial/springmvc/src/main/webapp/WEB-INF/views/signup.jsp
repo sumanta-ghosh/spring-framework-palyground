@@ -23,7 +23,7 @@
 					<label for="exampleInputEmail1">Email address</label> 
 					<input type="email" 
 						name="userEmail" 
-						value="${userEmail}"
+						value="${user.userEmail}"
 						class="form-control"
 						id="exampleInputEmail1" 
 						aria-describedby="emailHelp" 
@@ -37,7 +37,7 @@
 					<input 
 						type="password"
 						name="userPassword" 
-						value="${userPassword}"
+						value="${user.userPassword}"
 						class="form-control"
 						id="userPassword" 
 						placeholder="Password">

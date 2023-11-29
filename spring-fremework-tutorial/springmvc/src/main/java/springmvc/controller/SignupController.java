@@ -2,43 +2,43 @@ package springmvc.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.servlet.ModelAndView;
+
+import springmvc.model.User;
 
 @Controller
 public class SignupController {
 
+	@ModelAttribute
+	public void setCommonData(Model model) {
+		model.addAttribute("pageName", "Signup");
+	}
+
 	@RequestMapping(path = "signup", method = RequestMethod.GET)
 	public String showForm(Model model) {
-		model.addAttribute("pageName", "Signup");
 		return "signup";
 	}
 
 	@RequestMapping(path = "signup", method = RequestMethod.POST)
-	public ModelAndView signUpFormHandler(@RequestParam("userEmail") String userEmail, @RequestParam String userPassword, @RequestParam(name = "iAgree", required = false) String iAgree) {
-		ModelAndView mv = new ModelAndView();
-		mv.addObject("pageName", "Signup");
-		mv.addObject("userEmail", userEmail);
-		mv.addObject("userPassword", userPassword);
-		System.out.println("===========================");
-		System.out.println(userEmail);
-		System.out.println(userPassword);
-		System.out.println(iAgree);
+	public String signUpFormHandler(@ModelAttribute User user, Model model) {
 
-		if (userEmail == null || userEmail.trim().isEmpty()) {
-			mv.addObject("userEmailErr", "Email is required.");
+		if (user.getUserEmail() == "" || user.getUserEmail().trim().isEmpty()) {
+			model.addAttribute("userEmailErr", "Email is required.");
 			System.out.println("Email is required.");
 		}
 
-		if (userPassword == null || userPassword.trim().isEmpty()) {
-			mv.addObject("userPasswordErr", "Password is required.");
+		if (user.getUserPassword() == "" || user.getUserPassword().trim().isEmpty()) {
+			model.addAttribute("userPasswordErr", "Password is required.");
 			System.out.println("Password is required.");
 		}
 
-		mv.setViewName("signup");
-		return mv;
+		System.out.println("===========================");
+		System.out.println(model);
+		System.out.println(user);
+
+		return "signup";
 	}
 
 }
