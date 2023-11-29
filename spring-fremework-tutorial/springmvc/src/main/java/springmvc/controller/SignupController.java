@@ -1,15 +1,20 @@
 package springmvc.controller;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-import springmvc.model.User;
+import springmvc.entity.User;
+import springmvc.service.UserService;
 
 @Controller
 public class SignupController {
+
+	@Autowired
+	private UserService userService;
 
 	@ModelAttribute
 	public void setCommonData(Model model) {
@@ -33,6 +38,8 @@ public class SignupController {
 			model.addAttribute("userPasswordErr", "Password is required.");
 			System.out.println("Password is required.");
 		}
+
+		this.userService.saveUser(user);
 
 		System.out.println("===========================");
 		System.out.println(model);
