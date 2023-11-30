@@ -37,7 +37,7 @@
 							</div>
 							<div class="form-group">
 								<label>Select Courses</label>
-								<select class="form-control" name="course" multiple="multiple">
+								<select class="form-control" name="courses" multiple="multiple">
 									<option value="Java">Java</option>
 									<option value="Python">Python</option>
 									<option value="PHP">PHP</option>
@@ -57,7 +57,7 @@
 							</div>
 							<div class="form-group">
 								<label>Type</label>
-								<select class="form-control" name="type">
+								<select class="form-control" name="sudentType">
 									<option value="Normal Student">Normal Student</option>
 									<option value="Professional">Professional</option>
 									<option value="Under Grade">Under Grade</option>
