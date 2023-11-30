@@ -1,6 +1,7 @@
 package springmvc.controller;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -16,8 +17,12 @@ public class ComplexFormController {
 	}
 
 	@RequestMapping(path = "/handle-complex-form", method = RequestMethod.POST)
-	public String complexFormHandle(@ModelAttribute("student") Student student) {
+	public String complexFormHandle(@ModelAttribute("student") Student student, BindingResult result) {
 		System.out.println(student);
+		System.out.println(result);
+		if (result.hasErrors()) {
+			return "complex-form";
+		}
 		return "redirect:complex-form?t=1";
 	}
 

@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ page isELIgnored="false"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>  
 <!doctype html>
 <html lang="en">
 <head>
@@ -22,6 +23,9 @@
 				<div class="card">
 					<div class="card-body">
 						<h3 class="text-center">Complex Form</h3>
+						<div class="alert alert-danger" role="alert">
+						<form:errors path="student.*"/>
+						</div>
 						<form action="handle-complex-form" method="POST">
 							<div class="form-group">
 								<label>Name</label>
