@@ -25,6 +25,8 @@ public class Student {
 	private String gender;
 	private String sudentType;
 
+	private Address address;
+
 	public Long getId() {
 		return id;
 	}
@@ -83,7 +85,15 @@ public class Student {
 
 	@Override
 	public String toString() {
-		return "Student [id=" + id + ", name=" + name + ", email=" + email + ", dob=" + dob + ", courses=" + courses + ", gender=" + gender + ", sudentType=" + sudentType + "]";
+		return "Student [id=" + id + ", name=" + name + ", email=" + email + ", dob=" + dob + ", courses=" + courses + ", gender=" + gender + ", sudentType=" + sudentType + ", address=" + address + "]";
+	}
+
+	public Address getAddress() {
+		return address;
+	}
+
+	public void setAddress(Address address) {
+		this.address = address;
 	}
 
 }

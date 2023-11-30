@@ -63,6 +63,14 @@
 									<option value="Under Grade">Under Grade</option>
 								</select>
 							</div>
+							<div class="form-group">
+								<label>Street</label>
+								<input type="text" class="form-control" placeholder="Type your street" name="address.street" value="">
+							</div>
+							<div class="form-group">
+								<label>City</label>
+								<input type="text" class="form-control" placeholder="Type your city" name="address.city" value="">
+							</div>
 							<button type="submit" class="btn btn-primary">Submit</button>
 						</form>
 					</div>
