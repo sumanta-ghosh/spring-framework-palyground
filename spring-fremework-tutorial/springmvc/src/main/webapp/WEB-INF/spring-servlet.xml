@@ -56,4 +56,6 @@
 		<property name="sessionFactory" ref="localFactorySession" />
 	</bean>
 
+	<bean class="org.springframework.web.multipart.commons.CommonsMultipartResolver" name="multipartResolver" />
+
 </beans>
