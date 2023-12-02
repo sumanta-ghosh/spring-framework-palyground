@@ -1,1 +1,1 @@
-alert("I am from js file");
+console.log("I am from js file");
