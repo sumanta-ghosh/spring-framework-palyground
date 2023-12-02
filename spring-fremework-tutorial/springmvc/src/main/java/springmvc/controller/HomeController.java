@@ -5,7 +5,6 @@ import java.util.List;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -16,7 +15,7 @@ public class HomeController {
 
 	@RequestMapping(path = "/", method = RequestMethod.GET)
 	public String home(Model model) {
-		String abc = "asasasas";
+		String abc = "adadsa";
 		System.out.println(abc.length());
 		System.out.println("This is home url...");
 		model.addAttribute("pageName", "Home..");
@@ -52,13 +51,22 @@ public class HomeController {
 		return "contact-us";
 	}
 
-	@ExceptionHandler({ NullPointerException.class })
-	public String exceptionHandler() {
-		return "null-error";
-	}
-
-	@ExceptionHandler({ NumberFormatException.class })
-	public String formatExceptionHandler() {
-		return "format-error";
-	}
+//	@ResponseStatus(value = HttpStatus.INTERNAL_SERVER_ERROR)
+//	@ExceptionHandler({ NullPointerException.class })
+//	public String exceptionHandler() {
+//		return "null-error";
+//	}
+//
+//	@ResponseStatus(value = HttpStatus.INTERNAL_SERVER_ERROR)
+//
+//	@ExceptionHandler({ NumberFormatException.class })
+//	public String formatExceptionHandler() {
+//		return "format-error";
+//	}
+//
+//	@ResponseStatus(value = HttpStatus.INTERNAL_SERVER_ERROR)
+//	@ExceptionHandler({ Exception.class })
+//	public String generalExceptionHandler() {
+//		return "error";
+//	}
 }
