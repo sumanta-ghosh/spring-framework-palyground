@@ -18,36 +18,26 @@
 	<div class="container mt-5">
 		<a href="/springmvc/">Home</a> <a href="/springmvc/about">About</a> <a href="/springmvc/contact-us">Contact Us</a>
 		<div>
+			<h2>${postHandleMsg}</h2>
 			<form action="" method="POST">
 				<div class="form-group">
-					<label for="exampleInputEmail1">Email address</label> 
-					<input type="email" 
-						name="userEmail" 
-						value="${user.userEmail}"
-						class="form-control"
-						id="exampleInputEmail1" 
-						aria-describedby="emailHelp" 
+					<label for="exampleInputEmail1">Email address</label> <input type="email" name="userEmail"
+						value="${user.userEmail}" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
 						placeholder="Enter email">
-						<c:if test = "${not empty userEmailErr}">
-							<small class="form-text text-muted">${userEmailErr}</small>
-						</c:if>
+					<c:if test="${not empty userEmailErr}">
+						<small class="form-text text-muted">${userEmailErr}</small>
+					</c:if>
 				</div>
 				<div class="form-group">
-					<label for="exampleInputPassword1">Password</label> 
-					<input 
-						type="password"
-						name="userPassword" 
-						value="${user.userPassword}"
-						class="form-control"
-						id="userPassword" 
-						placeholder="Password">
-						<c:if test = "${not empty userPasswordErr}">
-							<span>${userPasswordErr}</span>
-						</c:if>
+					<label for="exampleInputPassword1">Password</label> <input type="password" name="userPassword"
+						value="${user.userPassword}" class="form-control" id="userPassword" placeholder="Password">
+					<c:if test="${not empty userPasswordErr}">
+						<span>${userPasswordErr}</span>
+					</c:if>
 				</div>
 				<div class="form-check">
-					<input type="checkbox" class="form-check-input" id="exampleCheck1" value="y" name="iAgree"> <label class="form-check-label"
-						for="exampleCheck1">Check me out</label>
+					<input type="checkbox" class="form-check-input" id="exampleCheck1" value="y" name="iAgree"> <label
+						class="form-check-label" for="exampleCheck1">Check me out</label>
 				</div>
 				<button type="submit" class="btn btn-primary">Submit</button>
 			</form>
