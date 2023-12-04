@@ -9,6 +9,13 @@ public class CustomInterceptor extends HandlerInterceptorAdapter {
 	@Override
 	public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
 		System.out.println("This is preHandle");
+		String name = request.getParameter("userEmail");
+		System.out.println(name);
+		if (name != null && name.isEmpty()) {
+			response.setContentType("text/html");
+			response.getWriter().println("Email can not be blank...");
+			return false;
+		}
 		return true;
 	}
 }
