@@ -57,5 +57,10 @@
 	</bean>
 
 	<bean class="org.springframework.web.multipart.commons.CommonsMultipartResolver" name="multipartResolver" />
-
+	<mvc:interceptors>
+		<mvc:interceptor>
+			<mvc:mapping path="/signup" />
+			<bean class="springmvc.interceptor.CustomInterceptor"></bean>
+		</mvc:interceptor>
+	</mvc:interceptors>
 </beans>
