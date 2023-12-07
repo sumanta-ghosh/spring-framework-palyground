@@ -43,7 +43,7 @@
 		</property>
 		<property name="annotatedClasses">
 			<list>
-				<value>springmvc.entity.User</value>
+				<value>springcrud.model.Product</value>
 			</list>
 		</property>
 	</bean>
