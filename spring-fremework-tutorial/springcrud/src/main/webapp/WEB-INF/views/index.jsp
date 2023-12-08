@@ -12,12 +12,19 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
 	integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
-<title>Spring Core MVC</title>
+<title>Spring Core CRUD</title>
 </head>
 <body>
 	<div class="container mt-5">
-		<a href="/springmvc/">Home</a> <a href="/springmvc/about">About</a> <a href="/springmvc/contact-us">Contact Us</a>
-		<div></div>
+		<div>
+			<form action="" method="POST">
+				<div class="form-group">
+					<label for="exampleInputEmail1">Product Title</label> <input type="text" name="productTitle"
+						value="${product.title}" class="form-control" placeholder="Enter product title">
+				</div>
+				<button type="submit" class="btn btn-primary">Add</button>
+			</form>
+		</div>
 	</div>
 	<!-- Optional JavaScript -->
 	<!-- jQuery first, then Popper.js, then Bootstrap JS -->
