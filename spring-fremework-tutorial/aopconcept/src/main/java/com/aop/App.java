@@ -16,7 +16,7 @@ public class App {
 		PaymentService paypal = context.getBean("paypal", PaymentService.class);
 		PaymentService upi = context.getBean("upi", PaymentService.class);
 		// paypal.makePayment();
-		upi.makePayment();
+		upi.makePayment(200);
 		context.close();
 	}
 }

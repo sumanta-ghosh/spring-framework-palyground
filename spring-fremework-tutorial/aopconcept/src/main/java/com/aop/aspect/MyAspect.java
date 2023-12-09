@@ -7,12 +7,12 @@ import org.aspectj.lang.annotation.Before;
 @Aspect
 public class MyAspect {
 
-	@Before("execution(* com.aop.services.PaymentService.makePayment())")
+	@Before("execution(* com.aop.services.PaymentService.makePayment(..))")
 	public void printBefore() {
 		System.out.println("Payment started....");
 	}
 
-	@After("execution(* com.aop.services.PaymentService.makePayment())")
+	@After("execution(* com.aop.services.PaymentService.makePayment(..))")
 	public void printAfter() {
 		System.out.println("Payment finished....");
 	}
