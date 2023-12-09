@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
@@ -32,6 +33,20 @@ public class ProductController {
 		ra.addFlashAttribute("successMsg", "Product added successfully");
 		RedirectView rv = new RedirectView(req.getContextPath() + "/product/add");
 		return rv;
+	}
+
+	@RequestMapping(path = "product/edit/{id}", method = RequestMethod.GET)
+	public String viewEditForm(@PathVariable("id") int id, Model model) {
+		Product product = productDao.getProduct(id);
+		model.addAttribute("product", product);
+		return "edit";
+	}
+
+	@RequestMapping(path = "product/edit/{id}", method = RequestMethod.POST)
+	public String handleEditForm(@PathVariable("id") int id, @ModelAttribute Product product, RedirectAttributes rd) {
+		productDao.updateProduct(product);
+		rd.addFlashAttribute("successMsg", "Product updated successfully");
+		return "redirect:/product/edit/" + id;
 	}
 
 }
