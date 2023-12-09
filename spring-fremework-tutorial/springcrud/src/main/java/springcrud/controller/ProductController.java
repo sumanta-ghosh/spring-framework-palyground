@@ -8,13 +8,13 @@ import org.springframework.web.bind.annotation.RequestMethod;
 @Controller
 public class ProductController {
 
-	@RequestMapping(name = "product/add", method = RequestMethod.GET)
+	@RequestMapping(path = "product/add", method = RequestMethod.GET)
 	public String viewAddForm(Model model) {
 		model.addAttribute("pageTitle", "Add Product");
 		return "add";
 	}
 
-	@RequestMapping(name = "product/add", method = RequestMethod.POST)
+	@RequestMapping(path = "product/add", method = RequestMethod.POST)
 	public String handleAddForm(Model model) {
 		model.addAttribute("pageTitle", "Add Product");
 		return "add";
