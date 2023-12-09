@@ -11,6 +11,13 @@
 		<div class="row">
 			<div class="col-md-6 offset-md-3">
 				<h1 class="text-center mb-3">Add Product</h1>
+				<c:if test="${not empty successMsg}">
+					<div class="alert alert-success" role="alert">${successMsg}</div>
+				</c:if>
+				<c:if test="${not empty errorMsg}">
+					<div class="alert alert-danger" role="alert">${errorMsg}</div>
+				</c:if>
+
 				<form action="${pageContext.request.contextPath}/product/add" method="POST">
 					<div class="form-group">
 						<label>Product Title</label> <input type="text" name="title" value="" class="form-control"
@@ -21,7 +28,7 @@
 						<textarea rows="4" class="form-control" name="description"></textarea>
 					</div>
 					<div class="form-group">
-						<label>Product Price</label> <input type="number" name="title" value="" class="form-control"
+						<label>Product Price</label> <input type="number" name="price" value="" class="form-control"
 							placeholder="Enter product price">
 					</div>
 					<div class="container text-right">
