@@ -13,7 +13,10 @@ public class App {
 		System.out.println("Hello World!");
 		ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("com/aop/app-config.xml");
 
-		PaymentService payment = context.getBean("payment", PaymentService.class);
-		payment.makePayment();
+		PaymentService paypal = context.getBean("paypal", PaymentService.class);
+		PaymentService upi = context.getBean("upi", PaymentService.class);
+		// paypal.makePayment();
+		upi.makePayment();
+		context.close();
 	}
 }
