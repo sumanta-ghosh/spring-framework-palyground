@@ -49,4 +49,11 @@ public class ProductController {
 		return "redirect:/product/edit/" + id;
 	}
 
+	@RequestMapping(path = "product/delete/{id}", method = RequestMethod.GET)
+	public String handleDeleteProduct(@PathVariable("id") int id, RedirectAttributes rd) {
+		productDao.delete(id);
+		rd.addFlashAttribute("successMsg", "Product deleted successfully");
+		return "redirect:/";
+	}
+
 }

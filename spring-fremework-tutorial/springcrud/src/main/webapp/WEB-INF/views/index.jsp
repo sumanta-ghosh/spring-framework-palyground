@@ -12,6 +12,9 @@
 		<div class="row">
 			<div class="col-md-12">
 				<h2 class="text-center mb-5">Product Dashboard</h2>
+				<c:if test="${not empty successMsg}">
+					<div class="alert alert-success" role="alert">${successMsg}</div>
+				</c:if>
 				<div class="container text-right mb-3">
 					<a href="${pageContext.request.contextPath}/product/add" class="btn btn-outline-success">Add Product</a>
 				</div>
@@ -30,10 +33,10 @@
 								<th scope="row">${product.id}</th>
 								<td>${product.title}</td>
 								<td>${product.price}</td>
-								<td>
-								<a href="${pageContext.request.contextPath}/product/edit/${product.id}" title="Edit"><i class="fa-regular fa-pen-to-square"></i></a>
-								<a href="${pageContext.request.contextPath}/product/delete/${product.id}" title="Delete"><i class="fa-regular fa-trash-can"></i></a>
-								</td>
+								<td><a href="${pageContext.request.contextPath}/product/edit/${product.id}" title="Edit"><i
+										class="fa-regular fa-pen-to-square"></i></a> <a href="javascript:void(0)"
+									onclick="delete_product('${pageContext.request.contextPath}/product/delete/${product.id}')" title="Delete"><i
+										class="fa-regular fa-trash-can text-danger"></i></a></td>
 							</tr>
 						</c:forEach>
 
@@ -41,7 +44,13 @@
 				</table>
 			</div>
 		</div>
-
 	</div>
+	<script>
+		function delete_product(url) {
+			if (confirm("Are you sure to delete this product!") == true) {
+				window.location.replace(url);
+			}
+		}
+	</script>
 </body>
 </html>
