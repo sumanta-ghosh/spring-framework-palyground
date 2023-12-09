@@ -9,8 +9,39 @@
 </head>
 <body>
 	<div class="container mt-5">
-		<p>Dash Board</p>
-		<p>${pageTitle}</p>
+		<div class="row">
+			<div class="col-md-12">
+				<h2 class="text-center mb-5">Product Dashboard</h2>
+				<div class="container text-right mb-3">
+					<a href="${pageContext.request.contextPath}/product/add" class="btn btn-outline-success">Add Product</a>
+				</div>
+				<table class="table table-sm">
+					<thead class="table-dark">
+						<tr>
+							<th scope="col">#</th>
+							<th scope="col">Title</th>
+							<th scope="col">Price</th>
+							<th scope="col">Action</th>
+						</tr>
+					</thead>
+					<tbody>
+						<c:forEach items="${products}" var="product">
+							<tr>
+								<th scope="row">${product.id}</th>
+								<td>${product.title}</td>
+								<td>${product.price}</td>
+								<td>
+								<a href="${pageContext.request.contextPath}/product/edit/${product.id}" title="Edit"><i class="fa-regular fa-pen-to-square"></i></a>
+								<a href="${pageContext.request.contextPath}/product/delete/${product.id}" title="Delete"><i class="fa-regular fa-trash-can"></i></a>
+								</td>
+							</tr>
+						</c:forEach>
+
+					</tbody>
+				</table>
+			</div>
+		</div>
+
 	</div>
 </body>
 </html>
